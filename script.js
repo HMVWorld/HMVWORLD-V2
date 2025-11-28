@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="assets/logo/logo.webp" alt="HMV World Logo" class="logo-img">
                 <div class="logo-text">
                     <span class="logo-name">HMV World</span>
+					<span class="logo-tagline">Global Export Solutions</span>
                     </div>
             </a>
             <nav>
@@ -458,4 +459,5 @@ document.addEventListener('keydown', e => {
         e.preventDefault();
         return false;
     }
+
 });
