@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const footerHTML = `
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-copyright">&copy; <span id="current-year"></span> HMV World. All rights reserved.</div>
+            <div class="footer-copyright">&copy; <span id="current-year"></span> © 2025 HMV World. All rights reserved.</div>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/company/hmv-world" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://www.instagram.com/hmv_world" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 2. CONFIGURATION
     // ------------------------------------------
     try {
+        // REPLACE WITH YOUR ACTUAL KEY
         emailjs.init("0CV0N42qYc1Rp59R8"); 
     } catch (e) { console.warn("EmailJS Init Error"); }
 
@@ -80,94 +81,94 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // ------------------------------------------
-    // 4. PRODUCT CATALOG & MODALS
+    // 4. PRODUCT CATALOG
     // ------------------------------------------
     const productCatalog = [
         {
             category: "Spices", icon: "fas fa-leaf", 
             subProducts: [
-                { name: "Black Pepper", image: "assets/products/Black-Pepper.webp", specs: "GL 500/550, Moisture <12%", ingredients: "Piper nigrum", uses: ["Seasoning", "Preservative"], hsCode: "0904.11.10", dgftDesc: "Black Pepper, ungarbled" },
-                { name: "Turmeric", image: "assets/products/Turmeric.webp", specs: "Dried Whole/Split, Powder", ingredients: "Curcuma longa", uses: ["Food coloring", "Antiseptic"], hsCode: "0910.30.20", dgftDesc: "Turmeric in Powder" },
-                { name: "Ginger", image: "assets/products/Ginger.webp", specs: "Dried Whole/Split, Powder", ingredients: "Zingiber officinale", uses: ["Tea", "Culinary"], hsCode: "0910.11.20", dgftDesc: "Ginger, other than fresh" },
-                { name: "Star Anise", image: "assets/products/Star-Anise.webp", specs: "Whole/Broken", ingredients: "Illicium verum", uses: ["Spices", "Medicinal oil"], hsCode: "0908.31.20", dgftDesc: "Anise seeds, crushed" },
-                { name: "Cumin Seeds", image: "assets/products/Cumin-Seeds.webp", specs: "99% purity", ingredients: "Cuminum cyminum", uses: ["Seasoning"], hsCode: "0909.31.29", dgftDesc: "Cumin Seed Other" },
-                { name: "Cinnamon", image: "assets/products/Cinnamon.webp", specs: "Cassia/Ceylon", ingredients: "Cinnamomum", uses: ["Baking"], hsCode: "0906.11.10", dgftDesc: "Cinnamon (Canella)" },
-                { name: "Cardamom", image: "assets/products/Cardamom.webp", specs: "Green/Black", ingredients: "Elettaria cardamomum", uses: ["Flavouring"], hsCode: "0908.31.20", dgftDesc: "Cardamom, crushed" },
+                { name: "Black Pepper", image: "assets/products/black-pepper.webp", specs: "GL 500/550, Moisture <12%", ingredients: "Piper nigrum", uses: ["Seasoning", "Preservative"], hsCode: "0904.11.10", dgftDesc: "Black Pepper, ungarbled" },
+                { name: "Turmeric", image: "assets/products/turmeric.webp", specs: "Dried Whole/Split, Powder", ingredients: "Curcuma longa", uses: ["Food coloring", "Antiseptic"], hsCode: "0910.30.20", dgftDesc: "Turmeric in Powder" },
+                { name: "Ginger", image: "assets/products/ginger.webp", specs: "Dried Whole/Split, Powder", ingredients: "Zingiber officinale", uses: ["Tea", "Culinary"], hsCode: "0910.11.20", dgftDesc: "Ginger, other than fresh" },
+                { name: "Star Anise", image: "assets/products/star-anise.webp", specs: "Whole/Broken", ingredients: "Illicium verum", uses: ["Spices", "Medicinal oil"], hsCode: "0908.31.20", dgftDesc: "Anise seeds, crushed" },
+                { name: "Cumin Seeds", image: "assets/products/cumin-seeds.webp", specs: "99% purity", ingredients: "Cuminum cyminum", uses: ["Seasoning"], hsCode: "0909.31.29", dgftDesc: "Cumin Seed Other" },
+                { name: "Cinnamon", image: "assets/products/cinnamon.webp", specs: "Cassia/Ceylon", ingredients: "Cinnamomum", uses: ["Baking"], hsCode: "0906.11.10", dgftDesc: "Cinnamon (Canella)" },
+                { name: "Cardamom", image: "assets/products/cardamom.webp", specs: "Green/Black", ingredients: "Elettaria cardamomum", uses: ["Flavouring"], hsCode: "0908.31.20", dgftDesc: "Cardamom, crushed" },
             ]
         },
         {
             category: "Pulses", icon: "fas fa-seedling", 
             subProducts: [
-                { name: "Chickpeas (Chana)", image: "assets/products/Chickpeas-Chana.webp", specs: "Kabuli/Desi", ingredients: "Cicer arietinum", uses: ["Flour (Besan)", "Hummus"], hsCode: "0713.20.00", dgftDesc: "Chickpeas (Garbanzos)" },
-                { name: "Red Lentils (Masoor)", image: "assets/products/Red-Lentils-Masoor.webp", specs: "Whole/Split", ingredients: "Lens culinaris", uses: ["Soups", "Dals"], hsCode: "0713.40.00", dgftDesc: "Lentils" },
-                { name: "Moong Dal", image: "assets/products/Moong-Dal.webp", specs: "Split/Whole", ingredients: "Vigna radiata", uses: ["Dals"], hsCode: "0713.31.00", dgftDesc: "Beans of the species Vigna mungo" },
+                { name: "Chickpeas (Chana)", image: "assets/products/chickpeas-chana.webp", specs: "Kabuli/Desi", ingredients: "Cicer arietinum", uses: ["Flour (Besan)", "Hummus"], hsCode: "0713.20.00", dgftDesc: "Chickpeas (Garbanzos)" },
+                { name: "Red Lentils (Masoor)", image: "assets/products/red-lentils-masoor.webp", specs: "Whole/Split", ingredients: "Lens culinaris", uses: ["Soups", "Dals"], hsCode: "0713.40.00", dgftDesc: "Lentils" },
+                { name: "Moong Dal", image: "assets/products/moong-dal.webp", specs: "Split/Whole", ingredients: "Vigna radiata", uses: ["Dals"], hsCode: "0713.31.00", dgftDesc: "Beans of the species Vigna mungo" },
             ]
         },
         {
             category: "Grains & Cereal", icon: "fas fa-wheat-alt", 
             subProducts: [
-                { name: "Basmati Rice", image: "assets/products/Basmati-Rice.webp", specs: "1121 Sella/Steam", ingredients: "Oryza sativa", uses: ["Pilaf", "Biryani"], hsCode: "1006.30.20", dgftDesc: "Basmati Rice" },
-                { name: "Non-Basmati Rice", image: "assets/products/Non-Basmati-Rice.webp", specs: "IR 64/Sona Masoori", ingredients: "Oryza sativa", uses: ["Daily Meals"], hsCode: "1006.30.90", dgftDesc: "Other than Basmati Rice" },
-                { name: "Wheat", image: "assets/products/Wheat.webp", specs: "Milling/Durum", ingredients: "Triticum", uses: ["Flour", "Bread"], hsCode: "1001.99.10", dgftDesc: "Wheat or Meslin seed" },
+                { name: "Basmati Rice", image: "assets/products/basmati-rice.webp", specs: "1121 Sella/Steam", ingredients: "Oryza sativa", uses: ["Pilaf", "Biryani"], hsCode: "1006.30.20", dgftDesc: "Basmati Rice" },
+                { name: "Non-Basmati Rice", image: "assets/products/non-basmati-rice.webp", specs: "IR 64/Sona Masoori", ingredients: "Oryza sativa", uses: ["Daily Meals"], hsCode: "1006.30.90", dgftDesc: "Other than Basmati Rice" },
+                { name: "Wheat", image: "assets/products/wheat.webp", specs: "Milling/Durum", ingredients: "Triticum", uses: ["Flour", "Bread"], hsCode: "1001.99.10", dgftDesc: "Wheat or Meslin seed" },
             ]
         },
         {
             category: "Dry Fruits", icon: "fas fa-sun", 
             subProducts: [
-                { name: "Cashews", image: "assets/products/Cashews.webp", specs: "W180/W240/W320", ingredients: "Anacardium", uses: ["Snacks"], hsCode: "0801.32.10", dgftDesc: "Cashew kernel, whole" },
-                { name: "Almonds", image: "assets/products/Almonds.webp", specs: "Shelled/In-shell", ingredients: "Prunus dulcis", uses: ["Baking"], hsCode: "0802.12.00", dgftDesc: "Almonds shelled" },
-                { name: "Raisins", image: "assets/products/Raisins.webp", specs: "Green/Black/Golden", ingredients: "Vitis vinifera", uses: ["Snacks"], hsCode: "0806.20.10", dgftDesc: "Raisins" },
+                { name: "Cashews", image: "assets/products/cashews.webp", specs: "W180/W240/W320", ingredients: "Anacardium", uses: ["Snacks"], hsCode: "0801.32.10", dgftDesc: "Cashew kernel, whole" },
+                { name: "Almonds", image: "assets/products/almonds.webp", specs: "Shelled/In-shell", ingredients: "Prunus dulcis", uses: ["Baking"], hsCode: "0802.12.00", dgftDesc: "Almonds shelled" },
+                { name: "Raisins", image: "assets/products/raisins.webp", specs: "Green/Black/Golden", ingredients: "Vitis vinifera", uses: ["Snacks"], hsCode: "0806.20.10", dgftDesc: "Raisins" },
             ]
         },
         {
             category: "Dehydrated Products", icon: "fas fa-fan", 
             subProducts: [
-                { name: "Dehydrated Onion", image: "assets/products/Dehydrated-Onion.webp", specs: "Flakes/Granules", ingredients: "Allium cepa", uses: ["Ready-to-Eat"], hsCode: "0712.20.00", dgftDesc: "Onions, dried" },
-                { name: "Dehydrated Garlic", image: "assets/products/Dehydrated-Garlic.webp", specs: "Flakes/Powder", ingredients: "Allium sativum", uses: ["Seasoning"], hsCode: "0712.90.20", dgftDesc: "Garlic, dried" },
-                { name: "Dehydrated Vegetables Mix", image: "assets/products/Dehydrated-Vegetables-Mix.webp", specs: "Carrot, Potato, Peas", ingredients: "Mixed Veg", uses: ["Instant Noodles"], hsCode: "0712.90.90", dgftDesc: "Other vegetables, dried" },
+                { name: "Dehydrated Onion", image: "assets/products/dehydrated-onion.webp", specs: "Flakes/Granules", ingredients: "Allium cepa", uses: ["Ready-to-Eat"], hsCode: "0712.20.00", dgftDesc: "Onions, dried" },
+                { name: "Dehydrated Garlic", image: "assets/products/dehydrated-garlic.webp", specs: "Flakes/Powder", ingredients: "Allium sativum", uses: ["Seasoning"], hsCode: "0712.90.20", dgftDesc: "Garlic, dried" },
+                { name: "Dehydrated Vegetables Mix", image: "assets/products/dehydrated-vegetables-mix.webp", specs: "Carrot, Potato, Peas", ingredients: "Mixed Veg", uses: ["Instant Noodles"], hsCode: "0712.90.90", dgftDesc: "Other vegetables, dried" },
             ]
         },
         {
             category: "Fresh Fruits", icon: "fas fa-apple-alt", 
             subProducts: [
-                { name: "Mangoes", image: "assets/products/Mangoes.webp", specs: "Alphonso/Kesar", ingredients: "Mangifera indica", uses: ["Fresh Eating"], hsCode: "0804.50.20", dgftDesc: "Mangoes, fresh" },
-                { name: "Pomegranates", image: "assets/products/Pomegranates.webp", specs: "Bhagwa variety", ingredients: "Punica granatum", uses: ["Fresh Eating"], hsCode: "0810.90.10", dgftDesc: "Pomegranates, fresh" },
+                { name: "Mangoes", image: "assets/products/mangoes.webp", specs: "Alphonso/Kesar", ingredients: "Mangifera indica", uses: ["Fresh Eating"], hsCode: "0804.50.20", dgftDesc: "Mangoes, fresh" },
+                { name: "Pomegranates", image: "assets/products/pomegranates.webp", specs: "Bhagwa variety", ingredients: "Punica granatum", uses: ["Fresh Eating"], hsCode: "0810.90.10", dgftDesc: "Pomegranates, fresh" },
             ]
         },
         {
             category: "Fresh Vegetables", icon: "fas fa-carrot", 
             subProducts: [
-                { name: "Onions", image: "assets/products/Onions.webp", specs: "Red/White", ingredients: "Allium cepa", uses: ["Cooking"], hsCode: "0703.10.10", dgftDesc: "Onions, fresh or chilled" },
-                { name: "Potatoes", image: "assets/products/Potatoes.webp", specs: "Kufri Jyoti", ingredients: "Solanum tuberosum", uses: ["Cooking"], hsCode: "0701.90.00", dgftDesc: "Potatoes, fresh or chilled" },
+                { name: "Onions", image: "assets/products/onions.webp", specs: "Red/White", ingredients: "Allium cepa", uses: ["Cooking"], hsCode: "0703.10.10", dgftDesc: "Onions, fresh or chilled" },
+                { name: "Potatoes", image: "assets/products/potatoes.webp", specs: "Kufri Jyoti", ingredients: "Solanum tuberosum", uses: ["Cooking"], hsCode: "0701.90.00", dgftDesc: "Potatoes, fresh or chilled" },
             ]
         },
         {
             category: "Herbs", icon: "fas fa-cannabis", 
             subProducts: [
-                { name: "Mint Leaves", image: "assets/products/Mint-Leaves.webp", specs: "Dried/Fresh", ingredients: "Mentha", uses: ["Tea"], hsCode: "1211.90.99", dgftDesc: "Other herbs, dried" },
-                { name: "Cilantro", image: "assets/products/Cilantro-Coriander-Leaves.webp", specs: "Dried/Fresh", ingredients: "Coriandrum", uses: ["Garnish"], hsCode: "1211.90.99", dgftDesc: "Other herbs, dried" },
+                { name: "Mint Leaves", image: "assets/products/mint-leaves.webp", specs: "Dried/Fresh", ingredients: "Mentha", uses: ["Tea"], hsCode: "1211.90.99", dgftDesc: "Other herbs, dried" },
+                { name: "Cilantro", image: "assets/products/cilantro-coriander-leaves.webp", specs: "Dried/Fresh", ingredients: "Coriandrum", uses: ["Garnish"], hsCode: "1211.90.99", dgftDesc: "Other herbs, dried" },
             ]
         },
         {
             category: "Flours", icon: "fas fa-box-open", 
             subProducts: [
-                { name: "Wheat Flour (Atta)", image: "assets/products/Wheat-Flour-Atta.webp", specs: "Chakki Fresh", ingredients: "Wheat", uses: ["Chapati"], hsCode: "1101.00.00", dgftDesc: "Wheat or meslin flour" },
-                { name: "Gram Flour (Besan)", image: "assets/products/Gram-Flour-Besan.webp", specs: "Made from Chana Dal", ingredients: "Chickpeas", uses: ["Snacks"], hsCode: "1106.10.00", dgftDesc: "Flour of dried legumes" },
+                { name: "Wheat Flour (Atta)", image: "assets/products/wheat-flour-atta.webp", specs: "Chakki Fresh", ingredients: "Wheat", uses: ["Chapati"], hsCode: "1101.00.00", dgftDesc: "Wheat or meslin flour" },
+                { name: "Gram Flour (Besan)", image: "assets/products/gram-flour-besan.webp", specs: "Made from Chana Dal", ingredients: "Chickpeas", uses: ["Snacks"], hsCode: "1106.10.00", dgftDesc: "Flour of dried legumes" },
             ]
         },
         {
             category: "Oilseeds", icon: "fas fa-sun", 
             subProducts: [
-                { name: "Groundnuts", image: "assets/products/Groundnuts-Peanuts.webp", specs: "Bold/Java", ingredients: "Arachis hypogaea", uses: ["Oil"], hsCode: "1202.42.00", dgftDesc: "Ground-nuts shelled" },
-                { name: "Sesame Seeds", image: "assets/products/Sesame-Seeds.webp", specs: "White/Black", ingredients: "Sesamum indicum", uses: ["Baking"], hsCode: "1207.40.10", dgftDesc: "Sesamum seeds" },
+                { name: "Groundnuts", image: "assets/products/groundnuts-peanuts.webp", specs: "Bold/Java", ingredients: "Arachis hypogaea", uses: ["Oil"], hsCode: "1202.42.00", dgftDesc: "Ground-nuts shelled" },
+                { name: "Sesame Seeds", image: "assets/products/sesame-seeds.webp", specs: "White/Black", ingredients: "Sesamum indicum", uses: ["Baking"], hsCode: "1207.40.10", dgftDesc: "Sesamum seeds" },
             ]
         },
         {
             category: "Other", icon: "fas fa-box", 
             subProducts: [
-                { name: "Incense Sticks", image: "assets/products/Incense-Sticks.webp", specs: "Sandal, Rose", ingredients: "Bamboo, oils", uses: ["Aromatherapy"], hsCode: "3307.41.00", dgftDesc: "Agarbatti" },
-                { name: "Imitation Jewellery", image: "assets/products/Imitation-Jewellery.webp", specs: "Fashion", ingredients: "Brass/Alloy", uses: ["Fashion"], hsCode: "7117.19.90", dgftDesc: "Other imitation jewellery" },
-                { name: "Jaggery (Gurr)", image: "assets/products/Jaggery-Gurr.webp", specs: "Cubes/Powder", ingredients: "Sugarcane", uses: ["Sweetener"], hsCode: "1701.13.00", dgftDesc: "Cane Jaggery" },
+                { name: "Incense Sticks", image: "assets/products/incense-sticks.webp", specs: "Sandal, Rose", ingredients: "Bamboo, oils", uses: ["Aromatherapy"], hsCode: "3307.41.00", dgftDesc: "Agarbatti" },
+                { name: "Imitation Jewellery", image: "assets/products/imitation-jewellery.webp", specs: "Fashion", ingredients: "Brass/Alloy", uses: ["Fashion"], hsCode: "7117.19.90", dgftDesc: "Other imitation jewellery" },
+                { name: "Jaggery (Gurr)", image: "assets/products/jaggery-gurr.webp", specs: "Cubes/Powder", ingredients: "Sugarcane", uses: ["Sweetener"], hsCode: "1701.13.00", dgftDesc: "Cane Jaggery" },
             ]
         },
     ];
@@ -299,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function() {
         quotationForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // FIX 3: Validation for Terms Checkbox
+            // FEATURE 3: Validate Terms Checkbox
             const termsCheck = document.getElementById('terms-check');
             if (termsCheck && !termsCheck.checked) {
                 alert("Please accept the Terms and Conditions to proceed.");
@@ -381,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const pCloseBtn = document.getElementById('partner-modal-close');
     if(pCloseBtn) pCloseBtn.addEventListener('click', window.closePartnerModal);
 
-    // Terms Modal Logic
+    // FEATURE 3: Terms Modal logic
     const termsModal = document.getElementById('terms-modal');
     window.showTermsModal = function() { 
         if(termsModal) {
@@ -412,6 +413,3 @@ document.addEventListener('keydown', e => {
         return false;
     }
 });
-
-
-
