@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const footerHTML = `
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-copyright">&copy; <span id="current-year"></span> © 2025 HMV World. All rights reserved.</div>
+            <div class="footer-copyright">&copy; <span id="current-year"></span> HMV World. All rights reserved.</div>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/company/hmv-world" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://www.instagram.com/hmv_world" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -412,5 +412,6 @@ document.addEventListener('keydown', e => {
         return false;
     }
 });
+
 
 
